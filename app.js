@@ -7,7 +7,6 @@ const axios = require('axios');
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-
 app.get('/', function(req, res) {
     res.render('index', { title: 'Qui prend quoi?' });
 });
@@ -19,6 +18,10 @@ app.post('/party', function(req, res) {
         .catch((err) => console.error(err));
     //console.log(req.body);
     res.send('Post ok !');
+});
+
+app.get('/party/:id', function(req, res) {
+    res.render('party', { title: 'Qui prend quoi? - Titre temporaire' });
 });
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));
