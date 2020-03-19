@@ -1,4 +1,6 @@
-@import "styles/vendors/reset";
+@import "vendors/reset";
+@import "config/media";
+@import "blocs/newParty";
 
 form {
   border: 1px solid green;
