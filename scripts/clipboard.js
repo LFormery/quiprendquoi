@@ -10,11 +10,11 @@ if (navigator.clipboard) {
         );
     });
 } else {
-    console.warn("Pas de support")
+    console.warn("Pas de support du presse papier")
 }
 
 function copyToClipboard($clipboardEl, $button) {
-    console.log('Click !');
+    //console.log('Click !');
     navigator.clipboard
         .writeText($clipboardEl.getAttribute('data-clipboard'))
         .then(() => {
