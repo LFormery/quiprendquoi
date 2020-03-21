@@ -1,0 +1,1 @@
+console.error("Error: Cannot find module '/Users/collaredprincess/Sites/Cours/quiprendquoiApp/scripts/clipboard.js' from '/Users/collaredprincess/Sites/Cours/quiprendquoiApp'");

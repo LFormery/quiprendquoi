@@ -16,7 +16,6 @@ app.post('/party', function(req, res) {
     axios
         .post(`${process.env.API_URL}/party`, req.body)
         .then(({ data }) => {
-            console.log(data);
             res.redirect(`/party/${data._id}`)
         })
         .catch((err) => {
@@ -35,10 +34,40 @@ app.get('/party/:id', function(req, res) {
                 party: data,
                 title: data.name,
                 url: `${process.env.FRONT_URL}:${process.env.PORT}/party/${data._id}`
-            }),
+}),
         )
         .catch((err) => console.log(err));
 });
+
+app.post('/party/:id/items/:itemId', function(req, res) {
+    axios
+        .delete(`${process.env.API_URL}/party/${req.params.id}/items/${req.params.itemId}`, req.body)
+        .then(({ data }) => {
+            res.redirect(`/party/${req.params.id}`)
+        })
+        .catch((err) => {
+            //console.log(err);
+            res.send(err)
+        });
+});
+
+
+app.post('/party/:id/items', function(req, res) {
+    axios
+        .post(`${process.env.API_URL}/party/${req.params.id}/items`, req.body)
+        .then(({ data }) => {
+            res.redirect(`/party/${req.params.id}`)
+        })
+        .catch((err) => {
+            //console.log(err);
+            res.send(err)
+        });
+    //console.log(req.body);
+    //res.send('Post ok !');
+});
+
+
+//router.delete('/:id/items/:itemId', (req, res)
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));
 
