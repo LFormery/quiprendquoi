@@ -4,3 +4,17 @@ h2= party.name
 h3 Créé par #{party.author}
 label(for="url") Partagez l'événement
 input(id="url" value=`${url}`)
+h3 Liste :
+ul
+    each val in party.items
+        form(method="post" action=`${url}` + "/items/" + val._id)
+            li= val.name + " (" + val.user + ")"
+            button(type="submit") Supprimer
+
+form(method="post" action=`${url}`+"/items")
+    div
+        label(for="name") Nom de l'item
+        input(name="name" id="name" required minlength="3" placeholder="Bière" )
+        label(for="user") Nom du participant
+        input(name="user" id="user" required minlength="2" placeholder="Louise")
+    button(type="submit") Ajouter un item
