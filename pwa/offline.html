@@ -40,5 +40,14 @@
             <h2>Oops !</h2>
             <h3>Vous êtes hors ligne</h3>
         </section>
+    <script>
+        caches.open('parties').then((cache) =>
+            cache.keys().then((keys) =>
+                keys.forEach((key) => {
+                    console.log(key);
+                })
+            )
+        );
+    </script>
     </body>
 </html>
