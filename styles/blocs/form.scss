@@ -7,8 +7,8 @@ section {
   justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
-  height: 85vh;
   width: 80vw;
+  min-height: 40vh;
   max-width: 600px;
   margin: auto;
   background-color: $white;
@@ -17,6 +17,7 @@ section {
   box-shadow: none;
 
   header {
+    margin: 1em;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -29,11 +30,12 @@ section {
         font-weight : bold;
         font-family: 'Pacifico', cursive;
         color: $strongColor;
+        padding-bottom: 1em;
+
     }
 
     h2 {
       font-size: 18px;
-      padding: 20px;
     }
 
     label {
@@ -54,7 +56,7 @@ section {
         display: block;
         margin: .5rem 0 1rem 0;
         max-width: 400px;
-        height: 5vh;
+        height: 35px;
         background-color: $white;
       }
 
@@ -70,6 +72,7 @@ section {
       button {
         color: $white;
         width: 8vw;
+        height: 35px;
         background: $backgroundColor;
         box-shadow: 2px 2px 1px $backgroundColor;
         border: 2px solid $backgroundColor;
@@ -77,6 +80,7 @@ section {
         cursor: pointer;
         border-top-right-radius: .5rem;
         border-bottom-right-radius: .5rem;
+        font-size: 16px;
 
         .fa.fa-clipboard {
           color: white;
@@ -123,13 +127,12 @@ section {
       button {
         display: block;
         place-self: center;
-        font-size: 12px;
-        color: $white;
-        border: 2px solid $backgroundColor;
+        font-size: 16px;
+        color: $backgroundColor;
+        border: none;
         padding: .3rem .7rem;
         cursor: pointer;
         transition: 300ms ease-in-out;
-        background-color: $backgroundColor;
         border-radius: .5rem;
       }
     }
@@ -142,6 +145,7 @@ section {
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    margin-top: 36px;
 
     h3 {
       font-size: 14px;
@@ -161,8 +165,8 @@ section {
         margin: .5rem 0 1rem 0;
         width: 55vw;
         max-width: 400px;
-        height: 5vh;
         border: 2px solid $backgroundColor;
+        height: 35px;
         box-shadow: 2px 2px 1px $backgroundColor;
         transition: 300ms ease-in-out;
         cursor: pointer;
@@ -186,6 +190,7 @@ section {
         transition: 300ms ease-in-out;
         background-color: $backgroundColor;
         color: $white;
+        height: 35px;
         border-radius: .5rem;
 
         &:hover {

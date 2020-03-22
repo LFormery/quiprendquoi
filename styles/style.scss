@@ -6,10 +6,17 @@
 body {
   font-size: 10px;
   font-family: sans-serif;
+  text-align: center;
+  font-size: 2em;
   color: $strongColor;
   background: $white;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  h1 {
+    font-family: 'Pacifico', cursive;
+    margin: 3vh;
+  }
 }
 
 @media (min-width: 600px){
