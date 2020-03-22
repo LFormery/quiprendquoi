@@ -1,6 +1,10 @@
 self.addEventListener('install', (event) => {
     console.log('Hello from the service worker !')
 });
-const name = 'bcalou';
-console.log(`Hello ${name}`);
+
+self.addEventListener('fetch', (event) => {
+    if (event.request.headers.get('Accept').includes('text/html')) {
+        event.respondWith(fetch(event.request));
+    }
+});
 

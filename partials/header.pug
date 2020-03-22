@@ -9,9 +9,9 @@ html(lang="fr")
         script(src="/script.js" async)
         script.
             if (navigator.serviceWorker) {
-                console.log('All good');
+                console.log('Service worker available');
             } else {
-                console.log('Nothing to see here...');
+                console.warn('No service worker here...');
             }
             navigator.serviceWorker.register("/sw.js")
                 .then(() => console.log('Service worker is registered'))
