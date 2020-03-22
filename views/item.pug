@@ -1,0 +1,9 @@
+include ../partials/header.pug
+form(method="post" action=`${url}` + "/items")
+    h2 Ajouter un élément à la liste
+    div.newParty__fields
+        //label(for="name") Nom de l'item
+        input(name="name" id="name" required minlength="3" placeholder="Bière" )
+        //label(for="user") Nom du participant
+        input(name="user" id="user" required minlength="2" placeholder="Louise")
+        button(type="submit") Ajouter

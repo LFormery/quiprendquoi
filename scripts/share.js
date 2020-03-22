@@ -1,5 +1,5 @@
 if (navigator["share"]){
-    console.log("Support de partage")
+    //console.log("Sharing support")
     document.querySelectorAll('[data-share-url]').forEach(($shareEl) => {
         const $button = document.createElement('button');
         $button.innerHTML = 'Partager';
@@ -14,5 +14,5 @@ if (navigator["share"]){
             .catch((error) => console.warn('Erreur de partage à cause de', error));
     });
 } else {
-    console.warn("Pas de support de partage")
+    console.warn("No sharing support")
 }

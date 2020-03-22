@@ -1,8 +1,8 @@
 if (navigator.clipboard) {
-    console.log("Support du presse papier")
+    //console.log("Support du presse papier")
     document.querySelectorAll('[data-clipboard]').forEach(($clipboardEl) => {
         const $button = document.createElement('button');
-        $button.innerHTML = 'Copier';
+        $button.className = "fa fa-clipboard";
         $clipboardEl.parentNode.append($button);
         $button.addEventListener(
             'click',
@@ -10,7 +10,7 @@ if (navigator.clipboard) {
         );
     });
 } else {
-    console.warn("Pas de support du presse papier")
+    console.warn("No clipboard support")
 }
 
 function copyToClipboard($clipboardEl, $button) {
@@ -18,8 +18,8 @@ function copyToClipboard($clipboardEl, $button) {
     navigator.clipboard
         .writeText($clipboardEl.getAttribute('data-clipboard'))
         .then(() => {
-            $button.innerHTML = 'Copié !';
-            setTimeout(() => ($button.innerHTML = 'Copier'), 2000);
+            $button.className = "fa fa-clipboard";
+            setTimeout(() => ($button.className = "fa fa-clipboard"), 2000);
         })
         .catch((err) => console.warn(err));
 }

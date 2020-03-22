@@ -1,11 +1,19 @@
 @import "vendors/reset";
 @import "config/media";
 @import "blocs/newParty";
+@import "blocs/form";
 
-form {
-  border: 1px solid green;
+body {
+  font-size: 10px;
+  font-family: sans-serif;
+  color: #EC84A1;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}
 
-  div {
-    color: red;
+@media (min-width: 600px){
+  body {
+    background: #F5C1D0;
   }
 }

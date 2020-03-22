@@ -1,27 +1,33 @@
 include ../partials/header.pug
-h1 Qui prend quoi ?
-h2= party.name
-h3 Créé par #{party.author}
-label(for="url") Partagez l'événement
-input(
-    id="url"
-    value=`${url}`
-    data-clipboard=`${url}`
-    data-share-url=`${url}`
-    data-share-title=party.name
-    data-share-text=party.author + " vous invite a rejoindre l'événement " + party.name )
-h3 Liste :
-ul
-    each val in party.items
-        form(method="post" action=`${url}` + "/items/" + val._id)
-            li= val.name + " (" + val.user + ")"
-            button(type="submit") Supprimer
-
-form(method="post" action=`${url}`+"/items")
-    div
-        label(for="name") Nom de l'item
-        input(name="name" id="name" required minlength="3" placeholder="Bière" )
-        label(for="user") Nom du participant
-        input(name="user" id="user" required minlength="2" placeholder="Louise")
-    button(type="submit") Ajouter un item
+section
+    header
+        //h1.title Qui prend quoi ?
+        h1= party.name
+        h2 Créé par #{party.author}
+        label(for="url") Partagez l'événement
+        div.link
+            input(
+                id="url"
+                value=`${url}`
+                data-clipboard=`${url}`
+                data-share-url=`${url}`
+                data-share-title=party.name
+                data-share-text=party.author + " vous invite a rejoindre l'événement " + party.name )
+    div.list
+        h3 Liste :
+        ul
+            each val in party.items
+                form(method="post" action=`${url}` + "/items/" + val._id)
+                    li
+                        i(class="fa fa-check")
+                        h4= val.name + " (" + val.user + ")"
+                        button(type="submit" class="fa fa-trash")
+    form(method="post" action=`${url}` + "/items").newParty
+        h3 Ajouter un élément à la liste
+        div.newParty__fields
+            //label(for="name") Nom de l'item
+            input(name="name" id="name" required minlength="3" placeholder="Mon produit" )
+            //label(for="user") Nom du participant
+            input(name="user" id="user" required minlength="2" placeholder="Mon nom")
+            button(type="submit") Ajouter
 
