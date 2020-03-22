@@ -36,14 +36,16 @@ section {
 
     h2 {
       font-size: 18px;
+      color: $backgroundColor;
     }
 
     label {
-      font-size: 14px;
-      color: $strongColor;
-      font-weight: bold;
+      font-size: 16px;
+      font-weight: lighter;
       max-width: 400px;
       width: 55vw;
+      color: $black;
+      text-align: left;
     }
 
     .link {
@@ -105,9 +107,10 @@ section {
     max-width: 400px;
 
     h3 {
-      font-size: 14px;
-      color: $strongColor;
-      font-weight: bold;
+      font-size: 16px;
+      font-weight: lighter;
+      color: $black;
+      text-align: left;
     }
 
     li {
@@ -116,12 +119,13 @@ section {
       display: flex;
       flex-direction: row;
       align-items: center;
-      color: $backgroundColor;
+      color: $black;
       justify-content: space-between;
       margin: 5px;
 
       h4 {
-        color: $strongColor;
+        color: $black;
+        font-weight: lighter;
       }
 
       button {
@@ -148,11 +152,12 @@ section {
     margin-top: 36px;
 
     h3 {
-      font-size: 14px;
-      font-weight: bold;
-      color: $strongColor;
+      font-size: 16px;
+      font-weight: lighter;
       max-width: 400px;
       width: 55vw;
+      color: $black;
+      text-align: left;
     }
     .newParty__fields {
       display: flex;
@@ -183,19 +188,22 @@ section {
         display: block;
         place-self: center;
         font-size: 12px;
+        font-weight: bold;
         width: 20vw;
-        border: 2px solid $backgroundColor;
+        border: 2px solid $strongColor;
+        box-shadow: 2px 2px 1px $strongColor;
         padding: .3rem .7rem;
         cursor: pointer;
         transition: 300ms ease-in-out;
-        background-color: $backgroundColor;
-        color: $white;
+        background-color: $white;
+        color: $strongColor;
         height: 35px;
         border-radius: .5rem;
 
         &:hover {
           background: $strongColor;
           color: $white;
+          box-shadow: none;
         }
 
       }
