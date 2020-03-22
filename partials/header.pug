@@ -7,5 +7,13 @@ html(lang="fr")
         link(rel="stylesheet" href="/style.css")
         script(src="https://use.fontawesome.com/0f98b0a917.js")
         script(src="/script.js" async)
-        script(src="/sw.js")
+        script.
+            if (navigator.serviceWorker) {
+                console.log('All good');
+            } else {
+                console.log('Nothing to see here...');
+            }
+            navigator.serviceWorker.register("/sw.js")
+                .then(() => console.log('Service worker is registered'))
+                .catch(err => console.warn(err));
     body

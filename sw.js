@@ -1,9 +1,6 @@
-if (navigator.serviceWorker) {
-    console.log('All good');
-    navigator.serviceWorker.register("/sw.js")
-        .then(() => console.log('Service worker is registered'))
-        .catch(err => console.warn(err));
-} else {
-    console.log('Nothing to see here...');
-}
+self.addEventListener('install', (event) => {
+    console.log('Hello from the service worker !')
+});
+const name = 'bcalou';
+console.log(`Hello ${name}`);
 

@@ -12,9 +12,9 @@ section {
   max-width: 600px;
   margin: auto;
   background-color: $white;
-  border: 2px solid $backgroundColor;
-  box-shadow: 2px 2px 1px $backgroundColor;
   border-radius: .5rem;
+  border: none;
+  box-shadow: none;
 
   header {
     display: flex;
@@ -201,8 +201,8 @@ section {
 
 @media (min-width: 600px){
   section {
-    border: none;
-    box-shadow: none;
+    border: 2px solid $backgroundColor;
+    box-shadow: 2px 2px 1px $backgroundColor;
   }
 }
 
