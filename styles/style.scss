@@ -6,14 +6,14 @@
 body {
   font-size: 10px;
   font-family: sans-serif;
-  color: #EC84A1;
-  background: #fff;
+  color: $strongColor;
+  background: $white;
   display: flex;
   justify-content: center;
 }
 
 @media (min-width: 600px){
   body {
-    background: #F5C1D0;
+    background: $backgroundColor;
   }
 }
