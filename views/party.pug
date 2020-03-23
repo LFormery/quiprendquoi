@@ -1,6 +1,8 @@
 include ../partials/header.pug
 h1 Quiprendquoi ?
 section.party
+    form(method="post" action=`${url}` class="deleteEvent")
+        button(type="submit" class="fa fa-trash")
     header
         //h1.title Qui prend quoi ?
         h2 #{party.author} vous invite à :
@@ -31,5 +33,3 @@ section.party
             input(name="user" id="user" required minlength="2" placeholder="Mon nom")
             button(type="submit") Ajouter
 
-script.
-    party = !{JSON.stringify(party)}

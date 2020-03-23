@@ -16,8 +16,28 @@ section {
   border: none;
   box-shadow: none;
 
+  .deleteEvent {
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+    button {
+      color: #FF4B7E;
+      cursor: pointer;
+      transition: 300ms ease-in-out;
+      border: none;
+      padding: 15px;
+      border-radius: .5rem;
+
+      &:active, &:hover {
+        background: $strongColor;
+        border: none;
+        color:$white;
+      }
+    }
+  }
   header {
-    margin: 1em;
+    margin-bottom: 1em;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
@@ -31,12 +51,11 @@ section {
         font-family: 'Pacifico', cursive;
         color: $strongColor;
         padding-bottom: 1em;
-
     }
 
     h2 {
       font-size: 18px;
-      color: $backgroundColor;
+      color: $black;
     }
 
     label {
@@ -65,19 +84,20 @@ section {
       input {
         width: 47vw;
         padding: 0 2vw;
-        box-shadow: 2px 2px 1px $backgroundColor;
-        border: 2px solid $backgroundColor;
+        box-shadow: 2px 2px 1px $black;
+        border: 2px solid $black;
+        border-right-color: $white;
         border-top-left-radius: .5rem;
         border-bottom-left-radius: .5rem;
       }
 
       button {
-        color: $white;
+        color: $strongColor;
         width: 8vw;
         height: 35px;
-        background: $backgroundColor;
-        box-shadow: 2px 2px 1px $backgroundColor;
-        border: 2px solid $backgroundColor;
+        background: $white;
+        box-shadow: 2px 2px 1px $strongColor;
+        border: 2px solid $strongColor;
         transition: 300ms ease-in-out;
         cursor: pointer;
         border-top-right-radius: .5rem;
@@ -88,15 +108,15 @@ section {
           color: white;
         }
 
-        &:active {
-          background: $backgroundColor;
-          border: $backgroundColor;
+        &:active, &:hover {
+          background: $strongColor;
+          border: none;
+          color:$white;
         }
 
         &:focus {
-          background: $backgroundColor;
-          color: $backgroundColor;
-          font-weight: bold;
+          background: $strongColor;
+          color: $white;
         }
       }
     }
@@ -131,8 +151,8 @@ section {
       button {
         display: block;
         place-self: center;
-        font-size: 16px;
-        color: $backgroundColor;
+        font-size: 18px;
+        color: $black;
         border: none;
         padding: .3rem .7rem;
         cursor: pointer;
@@ -170,9 +190,9 @@ section {
         margin: .5rem 0 1rem 0;
         width: 55vw;
         max-width: 400px;
-        border: 2px solid $backgroundColor;
+        border: 2px solid $black;
         height: 35px;
-        box-shadow: 2px 2px 1px $backgroundColor;
+        box-shadow: 2px 2px 1px $black;
         transition: 300ms ease-in-out;
         cursor: pointer;
         background-color: $white;
@@ -214,8 +234,8 @@ section {
 
 @media (min-width: 600px){
   section {
-    border: 2px solid $backgroundColor;
-    box-shadow: 2px 2px 1px $backgroundColor;
+    border: 2px solid $black;
+    box-shadow: 2px 2px 1px $black;
   }
 }
 

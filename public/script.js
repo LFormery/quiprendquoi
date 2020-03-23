@@ -3,9 +3,6 @@
 navigator.clipboard.writeText(a.getAttribute("data-clipboard")).then(function(){b.className="fa fa-clipboard",setTimeout(function(){return b.className="fa fa-clipboard"},2e3)})["catch"](function(a){return console.warn(a)})}
 
 },{}],2:[function(require,module,exports){
-"use strict";"undefined"==typeof party?console.log("undefined"):console.log(party);
-
-},{}],3:[function(require,module,exports){
 "use strict";navigator.share?document.querySelectorAll("[data-share-url]").forEach(function(a){var b=document.createElement("button");b.innerHTML="Partager",a.parentNode.append(b),navigator.share({title:a.getAttribute("data-share-title"),text:a.getAttribute("data-share-text"),url:a.getAttribute("data-share-url")}).then(function(){return console.log("Partage r\xE9ussi")})["catch"](function(a){return console.warn("Erreur de partage \xE0 cause de",a)})}):console.warn("No sharing support");
 
-},{}]},{},[1,2,3]);
+},{}]},{},[1,2]);

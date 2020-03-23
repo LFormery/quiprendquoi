@@ -65,7 +65,27 @@ app.post('/party/:id/items', function(req, res) {
     //res.send('Post ok !');
 });
 
-//router.delete('/:id/items/:itemId', (req, res)
+app.post('/party/:id/', function(req, res) {
+    axios
+        .delete(`${process.env.API_URL}/party/${req.params.id}`, req.body)
+        .then(({ data }) => {
+            res.redirect(`/`)
+        })
+        .catch((err) => {
+            res.send(err)
+        });
+});
+
+app.patch('/party/:id/', function(req, res) {
+    axios
+        .delete(`${process.env.API_URL}/party/${req.params.id}`, req.body)
+        .then(({ data }) => {
+            res.redirect(`/`)
+        })
+        .catch((err) => {
+            res.send(err)
+        });
+});
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));
 
