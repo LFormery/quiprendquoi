@@ -6,14 +6,22 @@
 body {
   font-size: 10px;
   font-family: sans-serif;
-  color: #EC84A1;
-  background: #fff;
+  text-align: center;
+  font-size: 2em;
+  color: $strongColor;
+  background: $backgroundColor;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    font-family: 'Pacifico', cursive;
+    margin: 3vh;
+  }
 }
 
 @media (min-width: 600px){
   body {
-    background: #F5C1D0;
+    background: $backgroundColor;
   }
 }

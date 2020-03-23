@@ -1,14 +1,13 @@
 include ../partials/header.pug
+h1 Quiprendquoi ?
 section
-    header
-        h1 Qui prend quoi ?
     form(method="post" action="/party").newParty
-        h3 Créer un événement
+        h3.create Créer un événement
         div.newParty__fields
             //label(for="name") Nom de l'événement
-            input(name="name" id="name" required minlength="3" placeholder="Nouvel an" )
+            input(name="name" id="name" required minlength="3" placeholder="Son nom" )
             //label(for="date") Date de l'évènement
-            input(name="date" id="date" type="date" minlength="5" placeholder="31.12.2020")
+            input(name="date" id="date" type="date" minlength="5" placeholder="Sa l'évènement")
             //label(for="author") Auteur de l'évènement
-            input(name="author" id="author" required minlength="2" placeholder="Ben")
+            input(name="author" id="author" required minlength="2" placeholder="Votre nom")
             button(type="submit") Créer

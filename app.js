@@ -6,7 +6,7 @@ const axios = require('axios');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
-
+app.use(express.static('pwa'));
 
 app.get('/', function(req, res) {
     res.render('index', { title: 'Qui prend quoi?' });
@@ -51,21 +51,6 @@ app.post('/party/:id/items/:itemId', function(req, res) {
         });
 });
 
-
-app.get('/party/:id', function(req, res) {
-    axios
-        .get(`${process.env.API_URL}/party/${req.params.id}`)
-        .then(({ data }) =>
-            res.render('party', {
-                party: data,
-                title: data.name,
-                url: `${process.env.FRONT_URL}:${process.env.PORT}/party/${data._id}`
-            }),
-        )
-        .catch((err) => console.log(err));
-});
-
-
 app.post('/party/:id/items', function(req, res) {
     axios
         .post(`${process.env.API_URL}/party/${req.params.id}/items`, req.body)
@@ -80,9 +65,30 @@ app.post('/party/:id/items', function(req, res) {
     //res.send('Post ok !');
 });
 
+app.post('/party/:id/', function(req, res) {
+    axios
+        .delete(`${process.env.API_URL}/party/${req.params.id}`, req.body)
+        .then(({ data }) => {
+            res.redirect(`/`)
+        })
+        .catch((err) => {
+            res.send(err)
+        });
+});
 
-//router.delete('/:id/items/:itemId', (req, res)
+app.patch('/party/:id/', function(req, res) {
+    axios
+        .delete(`${process.env.API_URL}/party/${req.params.id}`, req.body)
+        .then(({ data }) => {
+            res.redirect(`/`)
+        })
+        .catch((err) => {
+            res.send(err)
+        });
+});
 
 app.listen(process.env.PORT, () => console.log(`Front app listening on port ${process.env.PORT}!`));
 
 app.set('view engine', 'pug');
+
+

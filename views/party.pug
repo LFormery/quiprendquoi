@@ -1,10 +1,13 @@
 include ../partials/header.pug
-section
+h1 Quiprendquoi ?
+section.party
+    form(method="post" action=`${url}` class="deleteEvent")
+        button(type="submit" class="fa fa-trash")
     header
         //h1.title Qui prend quoi ?
+        h2 #{party.author} vous invite à :
         h1= party.name
-        h2 Créé par #{party.author}
-        label(for="url") Partagez l'événement
+        label(for="url") Partagez l'évènement
         div.link
             input(
                 id="url"
@@ -19,9 +22,8 @@ section
             each val in party.items
                 form(method="post" action=`${url}` + "/items/" + val._id)
                     li
-                        i(class="fa fa-check")
-                        h4= val.name + " (" + val.user + ")"
-                        button(type="submit" class="fa fa-trash")
+                        h4= "- " + val.name + " (" + val.user + ")"
+                        button(type="submit" class="fa fa-times")
     form(method="post" action=`${url}` + "/items").newParty
         h3 Ajouter un élément à la liste
         div.newParty__fields
