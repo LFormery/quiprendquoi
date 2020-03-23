@@ -23,7 +23,7 @@ section.party
                 form(method="post" action=`${url}` + "/items/" + val._id)
                     li
                         h4= "- " + val.name + " (" + val.user + ")"
-                        button(type="submit" class="fa fa-trash")
+                        button(type="submit" class="fa fa-times")
     form(method="post" action=`${url}` + "/items").newParty
         h3 Ajouter un élément à la liste
         div.newParty__fields

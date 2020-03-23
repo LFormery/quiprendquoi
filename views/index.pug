@@ -2,7 +2,7 @@ include ../partials/header.pug
 h1 Quiprendquoi ?
 section
     form(method="post" action="/party").newParty
-        h3 Créer un événement
+        h3.create Créer un événement
         div.newParty__fields
             //label(for="name") Nom de l'événement
             input(name="name" id="name" required minlength="3" placeholder="Son nom" )

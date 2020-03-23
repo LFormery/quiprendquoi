@@ -9,10 +9,11 @@ body {
   text-align: center;
   font-size: 2em;
   color: $strongColor;
-  background: $white;
+  background: $backgroundColor;
   display: flex;
   justify-content: center;
   flex-direction: column;
+
   h1 {
     font-family: 'Pacifico', cursive;
     margin: 3vh;
